@@ -1,0 +1,14 @@
+{% extends 'users/layout.html' %}
+{% block title %}Welcome, {{request.user.username.capitalize}}{% endblock title %}
+
+{% block body %}
+<h1>Welcome, {{request.user.first.capitalize}}</h1>
+<ul>
+    <li>First Name: {{request.user.first_name.capitalize}}</li>
+    <li>Last Name: {{request.user.last_name.capitalize}}</li>
+    <li>Username: {{request.user.username.capitalize}}</li>
+    <li>Email Address: {{request.user.email}}</li>
+</ul>
+
+<a href="{% url 'users:logout' %}">Logout</a>
+{% endblock body %}
